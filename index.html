@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butter & Roll | 프리미엄 수제 디저트</title>
+    <meta name="description" content="테일윈드로 완성한 고품격 버터떡과 화이트롤 랜딩페이지">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        butter: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b', // Primary Butter
+                            600: '#d97706',
+                        },
+                        crust: '#432818',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+        .glass { @apply backdrop-blur-md bg-white/80 border-b border-white/20; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl md:text-2xl font-extrabold tracking-tighter text-butter-600">BUTTER&ROLL</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#hero" class="hover:text-butter-500 transition-colors">홈페이지</a>
+                <a href="#features" class="hover:text-butter-500 transition-colors">제품 특징</a>
+                <a href="#product" class="hover:text-butter-500 transition-colors">브랜드 스토리</a>
+                <div class="flex items-center space-x-2 border-l pl-8 ml-4 border-gray-200">
+                    <span class="text-butter-600 font-bold">KO</span>
+                    <a href="index_en.html" class="text-gray-400 hover:text-butter-500 transition-colors">EN</a>
+                </div>
+                <a href="#contact" class="bg-butter-500 text-white px-6 py-2 rounded-full hover:bg-butter-600 shadow-lg shadow-butter-200 transition-all">문의하기</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden flex items-center space-x-4">
+                <a href="index_en.html" class="text-sm font-bold text-gray-500">EN</a>
+                <button id="mobile-menu-btn" class="text-crust p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-gray-100 py-6 px-10 space-y-4 shadow-2xl">
+            <a href="#hero" class="block text-lg font-bold hover:text-butter-500">홈페이지</a>
+            <a href="#features" class="block text-lg font-bold hover:text-butter-500">제품 특징</a>
+            <a href="#product" class="block text-lg font-bold hover:text-butter-500">브랜드 스토리</a>
+            <a href="#contact" class="block text-lg font-bold text-butter-600">문의하기</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-24 pb-20 md:pt-20 overflow-hidden bg-gradient-to-br from-butter-50 to-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-center md:text-left" data-aos="fade-right">
+                <div class="inline-block px-4 py-1 rounded-full bg-butter-100 text-butter-600 text-xs md:text-sm font-bold tracking-widest">PREMIUM DESSERT</div>
+                <h1 class="text-5xl md:text-8xl font-black leading-tight md:leading-none tracking-tight">
+                    버터의 깊은 <br class="hidden md:block"> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-butter-500 to-amber-600 italic">감동</span>을 빚다
+                </h1>
+                <p class="text-base md:text-lg text-gray-600 max-w-md mx-auto md:mx-0 leading-relaxed">
+                    엄선된 최상급 버터와 명인의 손길이 만나 탄생한 버터떡과 화이트롤. 당신의 일상에 가장 부드러운 휴식을 선물합니다.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#product" class="px-8 py-4 bg-crust text-white rounded-2xl font-bold shadow-2xl hover:scale-105 transition-transform text-center">컬렉션 보기</a>
+                    <a href="#features" class="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-2xl font-bold hover:bg-gray-50 transition-colors text-center">자세히 알아보기</a>
+                </div>
+            </div>
+            <div class="relative" data-aos="zoom-in" data-aos-delay="200">
+                <div class="absolute -top-20 -right-20 w-80 h-80 bg-butter-200/30 rounded-full blur-3xl animate-pulse"></div>
+                <img src="assets/butter_cake.png" alt="Butter Cake" class="relative z-10 w-full rounded-[40px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] animate-float">
+                <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-3xl shadow-xl z-20 flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-butter-500 rounded-full flex items-center justify-center text-white text-xl">✨</div>
+                    <div>
+                        <p class="font-bold">Handmade Daily</p>
+                        <p class="text-xs text-gray-500">Freshly baked every morning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-32 relative overflow-hidden bg-white">
+        <!-- Decorative Background Elements for Glass Effect -->
+        <div class="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-butter-400/30 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-amber-400/30 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">비교할 수 없는 가치</h2>
+                <div class="w-20 h-1.5 bg-butter-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Glassmorphism Card 1 -->
+                <div class="group p-10 rounded-[3.5rem] bg-white/60 backdrop-blur-[40px] border-2 border-white/80 shadow-2xl hover:shadow-butter-200/50 transition-all duration-500 hover:-translate-y-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-6xl mb-8 transform group-hover:scale-110 transition-transform duration-500">🧈</div>
+                    <h3 class="text-2xl font-extrabold mb-4 tracking-tight">Gourmet Butter</h3>
+                    <p class="text-gray-700 leading-relaxed font-medium">프랑스산 고메 버터의 깊은 풍미를 그대로 담았습니다. 인위적이지 않은 고급스러운 고소함을 느껴보세요.</p>
+                </div>
+                <!-- Glassmorphism Card 2 -->
+                <div class="group p-10 rounded-[3.5rem] bg-white/60 backdrop-blur-[40px] border-2 border-white/80 shadow-2xl hover:shadow-butter-200/50 transition-all duration-500 hover:-translate-y-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-6xl mb-8 transform group-hover:scale-110 transition-transform duration-500">☁️</div>
+                    <h3 class="text-2xl font-extrabold mb-4 tracking-tight">Cloud Texture</h3>
+                    <p class="text-gray-700 leading-relaxed font-medium">한 입 베어 무는 순간 녹아내리는 부드러움. 명인만의 특수 배합으로 완성한 구름 같은 식감입니다.</p>
+                </div>
+                <!-- Glassmorphism Card 3 -->
+                <div class="group p-10 rounded-[3.5rem] bg-white/60 backdrop-blur-[40px] border-2 border-white/80 shadow-2xl hover:shadow-butter-200/50 transition-all duration-500 hover:-translate-y-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-6xl mb-8 transform group-hover:scale-110 transition-transform duration-500">🌿</div>
+                    <h3 class="text-2xl font-extrabold mb-4 tracking-tight">Zero Additives</h3>
+                    <p class="text-gray-700 leading-relaxed font-medium">화학 첨가물 없이 정직한 재료만 고집합니다. 아이들 간식으로도 안심하고 즐기실 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="product" class="py-32 bg-butter-50 relative overflow-hidden">
+        <!-- Floating Glass Orbs for Background -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/30 rounded-full blur-2xl animate-pulse"></div>
+        
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="order-2 md:order-1 relative" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-butter-200/20 blur-3xl rounded-full"></div>
+                    <img src="assets/white_roll.png" alt="White Roll" class="relative z-10 w-full rounded-[40px] shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-700">
+                </div>
+                <!-- Glassmorphism Info Panel -->
+                <div class="order-1 md:order-2 space-y-8 p-10 md:p-16 rounded-[4rem] bg-white/50 backdrop-blur-[50px] border-2 border-white/70 shadow-2xl relative overflow-hidden" data-aos="fade-left">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-butter-200/40 rounded-full blur-2xl"></div>
+                    <span class="text-butter-600 font-bold tracking-widest uppercase inline-block mb-2">The Signature</span>
+                    <h2 class="text-4xl md:text-5xl font-black leading-tight text-gray-900">부드러움의 정점,<br>화이트롤</h2>
+                    <p class="text-xl text-gray-700 leading-relaxed font-medium">
+                        화이트롤은 단순히 달콤한 디저트가 아닙니다. 겹겹이 쌓인 크림의 레이어와 쫄깃한 식감의 완벽한 밸런스. 커피 한 잔과 함께할 때 비로소 완성되는 예술입니다.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex items-center space-x-4 text-gray-800 font-bold">
+                            <span class="w-8 h-8 bg-butter-500 backdrop-blur-md rounded-full flex items-center justify-center text-white text-sm shadow-lg">✓</span>
+                            <span>매일 아침 수제로 제작되는 신선함</span>
+                        </li>
+                        <li class="flex items-center space-x-4 text-gray-800 font-bold">
+                            <span class="w-8 h-8 bg-butter-500 backdrop-blur-md rounded-full flex items-center justify-center text-white text-sm shadow-lg">✓</span>
+                            <span>프리미엄 원유로 만든 묵직한 크림</span>
+                        </li>
+                        <li class="flex items-center space-x-4 text-gray-800 font-bold">
+                            <span class="w-8 h-8 bg-butter-500 backdrop-blur-md rounded-full flex items-center justify-center text-white text-sm shadow-lg">✓</span>
+                            <span>남녀노소 누구나 좋아하는 은은한 달콤함</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-crust py-20 text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">당신의 일상에 달콤함을 선물하세요</h2>
+            <p class="text-white/60 mb-12 max-w-xl mx-auto">전국 택배 배송 및 단체 주문 문의를 환영합니다. 정성을 다해 준비하겠습니다.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="mailto:order@butterroll.com" class="px-10 py-4 bg-butter-500 text-white rounded-full font-bold hover:bg-butter-600 transition-all shadow-xl">이메일 문의</a>
+                <a href="#" class="px-10 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-all">카카오톡 상담</a>
+            </div>
+            <div class="mt-20 pt-10 border-t border-white/10 text-white/30 text-sm">
+                &copy; 2026 BUTTER&ROLL Co. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Script & Logic -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-xl');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('py-2', 'shadow-xl');
+                nav.classList.add('py-4');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
